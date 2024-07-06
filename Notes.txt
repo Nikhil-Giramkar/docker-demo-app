@@ -62,5 +62,16 @@ Delete the image
 Now build the current app
 
 Now, we will create a container with Volume.
+Volumes persist the data in our application.
+
 Any changes made in local, will reflect in container also immediately
     docker run --name basic-app-container -p 8080:8080 --rm -v F:\Nikhil\GitHub\docker-demo-app:/app basic-app
+----------------------------
+
+Compose file
+As our application grows,
+We might have multiple technologies - like a backend/frontend etc.
+We might also need to run multiple docker commands to build these apps and dependencies.
+
+To store all the docker commands in one place we use compose.yml file.
+    docker compose up

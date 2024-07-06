@@ -1,0 +1,6 @@
+services:
+  img:
+    build: .
+    container_name: basic-app-composed
+    ports:
+      - 8080:8080
