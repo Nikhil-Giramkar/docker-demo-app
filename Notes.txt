@@ -1,0 +1,42 @@
+Created a basic Node Js App
+To demonstrate the use of Docker.
+
+Docker Tutorial Link
+Guide: https://www.youtube.com/playlist?list=PL8p2I9GklV47v6WZTjHAqdsHxpTIpjRwn
+
+
+Create basic node app in a directory.
+
+Initialize 
+    npm init
+
+Install Express
+    npm i express
+
+-- write code in index.js file
+
+Run the app
+    node index.js
+
+Now, create a docker file
+    just create a file with name "dockerfile"
+    without any extension
+
+Install the Official Microsoft Extension for VS Code
+
+-- write commands in dockerfile
+    Guide: https://www.youtube.com/watch?v=zeYP1rPxL3Y&list=PL8p2I9GklV47v6WZTjHAqdsHxpTIpjRwn&index=9
+
+Create a docker build for this app
+    docker build -t basic-app .
+
+An image for our app is created.
+Now you  can run the image to form a container and expose it at same port/random port
+
+
+Just like .gitignore, we can create a .dockerignore
+    to ignore files which are not needed while building docker image.
+    Example: node_modules - this is noot needed as we already have written RUN npm Install
+    Which will create necessary node_modules.
+    No need too push node_modules from local to image
+
