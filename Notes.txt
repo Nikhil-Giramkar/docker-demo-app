@@ -40,3 +40,27 @@ Just like .gitignore, we can create a .dockerignore
     Which will create necessary node_modules.
     No need too push node_modules from local to image
 
+
+Now, I want to see my chnages reflecting immediately when I change something in app.
+For that we take nodemon
+And add a script to run the app using nodemon.
+Add -L tag in script - as docker was not reloading nodemon changes : 
+https://stackoverflow.com/questions/39239686/nodemon-doesnt-restart-in-windows-docker-environment
+
+Then do npm run dev.
+
+Now, what if we want same to happen on docker containers.
+We create a new image.
+But now the dockerfile will change to accomodate nodemon run
+
+Delete the initial container
+    docker rm /basic-app-container
+
+Delete the image
+    docker rmi basic-app:latest
+
+Now build the current app
+
+Now, we will create a container with Volume.
+Any changes made in local, will reflect in container also immediately
+    docker run --name basic-app-container -p 8080:8080 --rm -v F:\Nikhil\GitHub\docker-demo-app:/app basic-app

@@ -7,12 +7,12 @@ app.get("/", (req, res)=>{
     res.json([
         {
             id: 1,
-            name: "Nikhil",
+            name: "Nikhil  1",
             isAdmin: true
         },
         {
             id: 2,
-            name: "Ansh",
+            name: "Ansharam y",
             isAdmin: false
         }
     ])
